@@ -74,6 +74,9 @@ class Router
         // Get match
         SimpleRouter::get('/match/{matchId}', MatchController::class . '@getMatch');
 
+        // Get match
+        SimpleRouter::get('/stats', MatchController::class . '@getStats');
+
         // Get profile
         SimpleRouter::get('/profile/{steamId}', ProfileController::class . '@getProfile');
 

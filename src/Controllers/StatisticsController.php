@@ -12,7 +12,7 @@ class StatisticsController extends BaseController
     protected $playersHelper;
 
     /**
-     * MatchController constructor.
+     * StatisticsController constructor.
      */
     public function __construct()
     {
@@ -25,7 +25,7 @@ class StatisticsController extends BaseController
      * @param string $steamId
      * @return string
      */
-    public function getProfile(string $steamId): string
+    public function getStats(string $steamId): string
     {
         try {
             $player = $this->playersHelper->getPlayer($steamId);
