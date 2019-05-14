@@ -24,15 +24,31 @@ class TwitchHelper extends BaseHelper
         $this->twitch = new NewTwitchApi($helixGuzzleClient, env('TWITCH_CLIENT_ID'), env('TWITCH_CLIENT_SECRET'));
     }
 
-    public function test()
+    /**
+     * Get a twitch user's followers.
+     *
+     * @param string $userId
+     * @return mixed
+     * @throws GuzzleException
+     */
+    public function getFollowers(string $userId)
     {
-        try {
-            $response = $this->twitch->getUsersApi()->getUsersFollows(null, '124125274');
+        $response = $this->twitch->getUsersApi()->getUsersFollows(null, $userId);
 
-            return json_decode($response->getBody()->getContents(), true);
-        } catch (GuzzleException $e) {
-            // Handle error appropriately for your application
-            die("error :/");
-        }
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
+    /**
+     * Get a twitch user's followers.
+     *
+     * @param string $userId
+     * @return mixed
+     * @throws GuzzleException
+     */
+    public function getFollowing(string $userId)
+    {
+        $response = $this->twitch->getUsersApi()->getUsersFollows($userId);
+
+        return json_decode($response->getBody()->getContents(), true);
     }
 }

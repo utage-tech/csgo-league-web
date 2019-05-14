@@ -19,8 +19,8 @@ class TwitchController
         $this->twitchHelper = new TwitchHelper();
     }
 
-    public function test()
+    public function getFollowers(string $userId)
     {
-        echo json_encode($this->twitchHelper->test());
+
     }
 }
