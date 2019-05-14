@@ -2,6 +2,7 @@
 
 use B3none\League\Controllers\DiscordController;
 use B3none\League\Controllers\LoginController;
+use B3none\League\Controllers\TwitchController;
 use Pecee\Http\Middleware\Exceptions\TokenMismatchException;
 use Pecee\Http\Request;
 use Pecee\SimpleRouter\Exceptions\HttpException;
@@ -86,9 +87,14 @@ class Router
         SimpleRouter::get('/discord/generate/{discordId}', DiscordController::class . '@generateDiscordLink');
         SimpleRouter::get('/discord/{discordId}/{code}', DiscordController::class . '@linkDiscord');
 
+        // Twitch
+        SimpleRouter::get('/twitch', TwitchController::class . '@linkDiscord');
+
         // Anything that's not registered fallback to the homepage.
         SimpleRouter::error(function(Request $request, \Exception $exception) {
-//            response()->redirect('https://redlinecs.net');
+            if ($_SERVER['REMOTE_ADDR'] !== '127.0.0.1') {
+                response()->redirect('https://redlinecs.net');
+            }
         });
     }
 }

@@ -7,6 +7,10 @@ $variables = [
     'DB_NAME' => '', // Your database name.
     'STEAM_API_KEY' => '', // Your steam API key.
     'BASE_TITLE' => 'B3none', // This is the base title for your site.
+    '' => '',
+
+
+    // Core configs
     'MATCHES_PAGE_LIMIT' => 10, // Page limit for matches page.
     'PLAYERS_PAGE_LIMIT' => 12, // Page limit for players page.
 
