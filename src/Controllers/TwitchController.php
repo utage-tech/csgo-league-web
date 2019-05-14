@@ -11,6 +11,9 @@ class TwitchController
      */
     protected $twitchHelper;
 
+    /**
+     * TwitchController constructor.
+     */
     public function __construct()
     {
         $this->twitchHelper = new TwitchHelper();

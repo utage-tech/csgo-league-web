@@ -20,7 +20,7 @@ class TwitchHelper extends BaseHelper
     {
         parent::__construct();
 
-        $helixGuzzleClient = new HelixGuzzleClient();
+        $helixGuzzleClient = new HelixGuzzleClient(env('TWITCH_CLIENT_ID'));
         $this->twitch = new NewTwitchApi($helixGuzzleClient, env('TWITCH_CLIENT_ID'), env('TWITCH_CLIENT_SECRET'));
     }
 
