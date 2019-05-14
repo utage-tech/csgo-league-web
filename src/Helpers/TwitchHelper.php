@@ -24,6 +24,35 @@ class TwitchHelper extends BaseHelper
         $this->twitch = new NewTwitchApi($helixGuzzleClient, env('TWITCH_CLIENT_ID'), env('TWITCH_CLIENT_SECRET'));
     }
 
+    public function test()
+    {
+        $response = $this->twitch->getStreamsApi()->getStreams();
+        return json_decode($response->getBody()->getContents(), true);
+    }
+
+    /**
+     * Get a user's ID from their username
+     *
+     * @param string $username
+     * @return array|null
+     * @throws GuzzleException
+     */
+    public function getUserId(string $username): ?array
+    {
+        $response = $this->twitch->getUsersApi()->getUserByUsername($username);
+
+        $responseData = json_decode($response->getBody()->getContents(), true)['data'];
+
+        if (sizeof($responseData) > 0) {
+            return json_encode([
+                'username' => $username,
+                'id' => $responseData[0]['id']
+            ]);
+        }
+
+        return null;
+    }
+
     /**
      * Get a twitch user's followers.
      *
