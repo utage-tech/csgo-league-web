@@ -27,14 +27,9 @@ class TwitchHelper extends BaseHelper
     public function test()
     {
         try {
-            // Make the API call. A ResponseInterface object is returned.
-            $response = $this->twitch->getUsersApi()->getUserByUsername('b3none');
-            echo $response->getBody()->getContents();
-            die;
-            // Get and decode the actual content sent by Twitch.
-            $responseContent = json_decode($response->getBody()->getContents());
+            $response = $this->twitch->getUsersApi()->getUsersFollows(null, '124125274');
 
-            return $responseContent->data[0];
+            return json_decode($response->getBody()->getContents(), true);
         } catch (GuzzleException $e) {
             // Handle error appropriately for your application
             die("error :/");

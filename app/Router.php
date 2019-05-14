@@ -93,7 +93,7 @@ class Router
         // Anything that's not registered fallback to the homepage.
         SimpleRouter::error(function(Request $request, \Exception $exception) {
             if ($_SERVER['REMOTE_ADDR'] !== '127.0.0.1') {
-                response()->redirect('https://redlinecs.net');
+                response()->redirect('/home');
             }
         });
     }
