@@ -88,7 +88,7 @@ class Router
         SimpleRouter::get('/discord/{discordId}/{code}', DiscordController::class . '@linkDiscord');
 
         // Twitch
-        SimpleRouter::get('/twitch', TwitchController::class . '@linkDiscord');
+        SimpleRouter::get('/twitch', TwitchController::class . '@test');
 
         // Anything that's not registered fallback to the homepage.
         SimpleRouter::error(function(Request $request, \Exception $exception) {

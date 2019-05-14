@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e27e522c94ca09d0364063049e077879",
+    "content-hash": "c7a00efd8fc4f3877810daa215227178",
     "packages": [
         {
             "name": "b3none/steam-id-converter",
@@ -338,6 +338,62 @@
                 "tokenizer"
             ],
             "time": "2018-03-21T22:21:57+00:00"
+        },
+        {
+            "name": "nicklaw5/twitch-api-php",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nicklaw5/twitch-api-php.git",
+                "reference": "171ef0e43662ea186ec5a6b7a452b3bd3822f3a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nicklaw5/twitch-api-php/zipball/171ef0e43662ea186ec5a6b7a452b3bd3822f3a3",
+                "reference": "171ef0e43662ea186ec5a6b7a452b3bd3822f3a3",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "~6.0",
+                "php": ">=7.1.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.13",
+                "phpspec/phpspec": "^5.1",
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TwitchApi\\": "src/",
+                    "NewTwitchApi\\": "src/NewTwitchApi"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicholas Law",
+                    "homepage": "https://github.com/nicklaw5"
+                },
+                {
+                    "name": "Brian Zwahr",
+                    "homepage": "https://github.com/echosa"
+                }
+            ],
+            "description": "A Twitch API client for PHP.",
+            "homepage": "http://github.com/nicklaw5/twitch-api-php",
+            "keywords": [
+                "api",
+                "twitch",
+                "twitch-api",
+                "twitch-tv",
+                "twitch.tv"
+            ],
+            "time": "2019-04-19T15:40:23+00:00"
         },
         {
             "name": "nikic/php-parser",
