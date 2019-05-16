@@ -17,9 +17,6 @@ class PlayersHelper extends BaseHelper
         parent::__construct();
 
         $this->converter = Converter::create();
-
-        // This is a filthy hack to make sure that all of our players have a steam64 id
-        $this->updatePlayers();
     }
 
     /**

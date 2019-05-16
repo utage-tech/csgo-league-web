@@ -9,7 +9,6 @@ $jobby->add('UpdatePlayers', [
         $playersHelper = new \B3none\League\Helpers\PlayersHelper();
         $playersHelper->updatePlayers();
     },
-
     'schedule' => '0 * * * *',
 ]);
 
